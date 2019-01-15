@@ -9,6 +9,42 @@
 //| $$ | $$ | $$ \$$    $$ \$$    $$
 // \$$  \$$  \$$  \$$$$$$   \$$$$$$$
 
+
+
+
+const playerScore = document.querySelector(".playerScore");
+const pScoreDisplay = document.createElement('p');
+      pScoreDisplay.textContent = 'You: 0';
+      playerScore.appendChild(pScoreDisplay);
+
+const computerScore = document.querySelector(".computerScore");
+const cScoreDisplay = document.createElement('p');
+      cScoreDisplay.textContent = 'Opponent: 0';
+      computerScore.appendChild(cScoreDisplay)
+
+const replayArea = document.querySelector(".replayArea")
+
+const activityArea = document.querySelector(".activityArea");
+const activity = document.createElement('p');
+      activity.textContent = ' ';
+      activityArea.appendChild(activity);
+
+
+
+const btnRock = document.querySelector('#btnRock');
+btnRock.addEventListener('click', () => {
+  console.log(playRound("rock", computerPlay()));
+});
+const btnPaper = document.querySelector('#btnPaper');
+btnPaper.addEventListener('click', () => {
+  console.log(playRound("paper", computerPlay()));
+});
+const btnScissors = document.querySelector('#btnScissors');
+btnScissors.addEventListener('click', () => {
+  console.log(playRound("scissors", computerPlay()));
+});
+
+
 //Pass the results of this to playRound. This is the computer's turn.
 function computerPlay() {
  let cRoll = Math.floor(Math.random() * 3)
@@ -86,39 +122,7 @@ else if (pSelection == "paper" && cSelection == "rock") {
   }
 }
 
-const playerScore = document.querySelector(".playerScore");
-const pScoreDisplay = document.createElement('p');
-      pScoreDisplay.textContent = 'You: 0';
-      playerScore.appendChild(pScoreDisplay);
-
-const computerScore = document.querySelector(".computerScore");
-const cScoreDisplay = document.createElement('p');
-      cScoreDisplay.textContent = 'Opponent: 0';
-      computerScore.appendChild(cScoreDisplay)
-
-const replayArea = document.querySelector(".replayArea")
-
-const activityArea = document.querySelector(".activityArea");
-const activity = document.createElement('p');
-      activity.textContent = ' ';
-      activityArea.appendChild(activity);
-
-
-
-const btnRock = document.querySelector('#btnRock');
-btnRock.addEventListener('click', () => {
-  console.log(playRound("rock", computerPlay()));
-});
-const btnPaper = document.querySelector('#btnPaper');
-btnPaper.addEventListener('click', () => {
-  console.log(playRound("paper", computerPlay()));
-});
-const btnScissors = document.querySelector('#btnScissors');
-btnScissors.addEventListener('click', () => {
-  console.log(playRound("scissors", computerPlay()));
-});
-
-
+//This function ends the game when either player reaches 5 wins.
 function winnerAnnounce(pWin, cWin) {
   if (pWin === 5) {
   activity.textContent = '';
@@ -160,6 +164,10 @@ else if (cWin === 5) {
 }
 else return;
 }
+
+
+
+
 
 
 //This function will 5 rounds by calling playRound, keep tally and announce a winner
