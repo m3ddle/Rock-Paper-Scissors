@@ -1,0 +1,32 @@
+body {
+text-align: center;
+}
+
+h1 {
+    color: white;
+  }
+
+.gameContainer {
+    background: #F5F5F6;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 250px;
+}
+
+.titleArea {
+    background-color: #0D47A1;
+}
+
+.buttonArea {
+}
+
+.playerScore {
+    
+}
+
+.computerScore{
+
+    
+}
